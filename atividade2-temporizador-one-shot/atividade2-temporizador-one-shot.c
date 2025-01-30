@@ -39,6 +39,7 @@ int64_t turn_off_callback(alarm_id_t id, void *user_data)
 
 void gpio_callback(uint gpio, uint32_t events)
 {
+
     if (!button_pressed)
     {
         button_pressed = true;

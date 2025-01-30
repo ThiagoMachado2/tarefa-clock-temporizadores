@@ -3,7 +3,7 @@
 #include "hardware/timer.h"
 
 #define LED_VERMELHO 13
-#define LED_AMARELO 12
+#define LED_AMARELO 12 // Pino correspodente ao LED Azul da placa BitDogLab, mas a atividade apenas pede pra ser simulada no wokwi, caso fosse simulado o semafaro no placa bitdoglab iria precisar trabalhar com PWM para conseguir obter na placa BitDogLab a cor amarela de forma precisa.
 #define LED_VERDE 11
 
 volatile int estado = 0;
@@ -52,9 +52,10 @@ int main()
 
     struct repeating_timer timer;
     add_repeating_timer_ms(3000, repeating_timer_callback, NULL, &timer);
-    
+
     while (1)
     {
+        printf("Semáforo operando...\n");
         sleep_ms(1000);
     }
 }
